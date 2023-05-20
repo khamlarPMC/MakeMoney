@@ -14,6 +14,9 @@ class _HomeScrenState extends State<HomeScren> {
       appBar: AppBar(
         title: Text("Home"),
       ),
+      body: const Column(
+        children: [],
+      ),
     );
   }
 }
