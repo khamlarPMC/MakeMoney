@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:hive_flutter/adapters.dart';
+import 'package:makemoney/model/book_model.dart';
 import 'package:makemoney/model/wallet_model.dart';
 
 import '../constants/hive_box.dart';
@@ -20,15 +21,15 @@ class LocalDatabaseService {
     await Hive.initFlutter();
 
     Hive.registerAdapter(WalletAdapter());
-  //   Hive.registerAdapter(BorrowerAdapter());
+    Hive.registerAdapter(BookModelAdapter());
   //  Hive.registerAdapter(UserTakeModeAdapter());
     // await FutureOr.wait(
     //   [
 
     //   ],
     // );
-    // await Hive.openBox<Device>(HiveBox.devices.name);
-    // await Hive.openBox<Borrower>(HiveBox.borrowers.name);
+    await Hive.openBox<Wallet>(HiveBox.wallet.name);
+    await Hive.openBox<BookModel>(HiveBox.book.name);
     //  await Hive.openBox<UserTakeMode>(HiveBox.user.name);
   }
 

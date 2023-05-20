@@ -1,3 +1,4 @@
 enum HiveBox {
   wallet,
+  book,
 }
